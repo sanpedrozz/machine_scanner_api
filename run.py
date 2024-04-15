@@ -3,6 +3,12 @@
 import uvicorn
 from fastapi import FastAPI
 
+from logger import logger
+
+logger.info(f"{'*' * 100}")
+logger.info('{:^100}'.format('Запуск сервиса'))
+logger.info(f"{'*' * 100}")
+
 from routers import router
 
 app = FastAPI()

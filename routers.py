@@ -27,5 +27,6 @@ async def read_machine_com_port():
 
 @router.post("/send-message/")
 async def send_message(request: SendMessageRequest):
+    logger.info(f'Получено ID: {request.id} типа {type(request.id)}')
     success = com_port_service.send_to_com_port(request.id)
     return {"success": success, "message": request.id}
